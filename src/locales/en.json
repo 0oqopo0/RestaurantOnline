@@ -1,0 +1,92 @@
+{
+  "home": {
+    "welcome": "Welcome to Our Restaurant",
+    "features": {
+      "variety": "Variety of Foods",
+      "variety_desc": "Various Persian and international dishes with the best quality",
+      "fast_service": "Fast Service",
+      "fast_service_desc": "Order delivery in the shortest possible time",
+      "quality": "Guaranteed Quality",
+      "quality_desc": "Using the best ingredients and professional chefs"
+    },
+    "about_us": "About Us",
+    "about_us_desc": "With over 10 years of experience in serving the best Persian and international foods, our restaurant strives to provide a memorable experience for our customers using the finest ingredients and skilled chefs. We aim to offer better services through our modern online ordering system."
+  },
+  "login": {
+    "title": "Login to Your Account",
+    "email": "Email",
+    "email_error": "Enter a valid email",
+    "password": "Password",
+    "password_error": "Enter your password",
+    "submit": "Login",
+    "no_account": "Don't have an account?",
+    "register": "Register"
+  },
+  "menu": {
+    "title": "Restaurant Menu",
+    "main_dishes": "Main Dishes",
+    "appetizers": "Appetizers",
+    "drinks": "Drinks",
+    "add_to_cart": "Add to Cart",
+    "added_to_cart": "Added to your cart",
+    "currency": "Toman",
+    "items": {
+      "kebab": "Chelo Kebab Kubideh",
+      "kebab_desc": "Two skewers of ground lamb kebab with Persian rice",
+      "joojeh": "Joojeh Kebab",
+      "joojeh_desc": "Saffron-marinated chicken kebab with Persian rice",
+      "ghormeh": "Ghormeh Sabzi",
+      "ghormeh_desc": "Ghormeh Sabzi stew with Persian rice",
+      "shirazi_salad": "Shirazi Salad",
+      "shirazi_salad_desc": "Cucumber, tomato, onion, and lemon juice",
+      "mast_khiar": "Mast-o-Khiar",
+      "mast_khiar_desc": "Yogurt with cucumber and mint",
+      "soda": "Soda",
+      "soda_desc": "Family-sized soda"
+    }
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "empty": "Your cart is empty",
+    "total": "Total",
+    "address": "Delivery Address",
+    "phone": "Phone Number",
+    "submit_order": "Place Order",
+    "order_error": "Please enter address and phone number",
+    "order_success": "Your order was successfully placed. Tracking Code: {trackingCode}",
+    "order_time": "Order Time",
+    "tracking_code": "Tracking Code",
+    "added_at": "Added At",
+    "last_added": "Last Added Item",
+    "order_summary":"Order summary",
+    "items":"Items",
+    "last_order":"Last Order"
+  },
+  "sidebar": {
+    "title": "Main Menu",
+    "home": "Home",
+    "register": "Register",
+    "login": "Login",
+    "menu": "Restaurant Menu",
+    "cart": "Shopping Cart",
+    "language": "Change Language",
+    "theme": "Change Theme",
+    "settings": "Settings",
+    "toggleTheme": "Change Theme",
+    "openMenu": "Open Menu"
+  },
+  "register": {
+    "title": "Register",
+    "fullname": "Full Name",
+    "fullname_error": "Please enter your full name",
+    "email": "Email",
+    "email_error": "Please enter a valid email",
+    "phone": "Phone Number",
+    "phone_error": "Please enter a valid phone number (11 digits starting with 0)",
+    "password": "Password",
+    "password_error": "Password must be at least 6 characters",
+    "confirm_password": "Confirm Password",
+    "confirm_password_error": "Passwords do not match",
+    "submit": "Register"
+  }
+}
