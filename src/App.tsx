@@ -1,3 +1,4 @@
+// src/App.tsx
 import { useState, useEffect } from 'react';
 import { CssBaseline, Box } from '@mui/material';
 import { LocalizationProvider } from '@mui/x-date-pickers';
@@ -5,7 +6,7 @@ import { AdapterMomentJalaali } from '@mui/x-date-pickers/AdapterMomentJalaali';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { useTheme } from '@mui/material/styles';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom'; // اضافه کردن useNavigate
 
 import Sidebar from './components/Sidebar';
 import NavBar from './components/NavBar';
@@ -22,15 +23,17 @@ function App() {
   const muiTheme = useTheme();
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
+  const [selectedForm, setSelectedForm] = useState<string>(''); // state برای selectedForm
   const isRTL = i18n.language === 'fa';
   const drawerWidth = sidebarOpen ? (isMobile ? '100%' : 240) : 65;
   const location = useLocation();
+  const navigate = useNavigate(); // برای تغییر مسیر
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 600);
       if (window.innerWidth <= 600) {
-        setSidebarOpen(false); // بستن سایدبار در حالت موبایل
+        setSidebarOpen(false);
       }
     };
 
@@ -39,6 +42,17 @@ function App() {
 
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  // استفاده از selectedForm برای تغییر مسیر
+  useEffect(() => {
+    if (selectedForm === 'cart') {
+      navigate('/cart');
+    } else if (selectedForm === 'home') {
+      navigate('/');
+    } else if (selectedForm === 'menu') {
+      navigate('/menu');
+    } // می‌توانید مسیرهای دیگر را نیز اضافه کنید
+  }, [selectedForm, navigate]);
 
   const toggleSidebar = () => setSidebarOpen((prev) => !prev);
 
@@ -58,7 +72,11 @@ function App() {
           >
             <CssBaseline />
 
-            <NavBar toggleSidebar={toggleSidebar} sidebarOpen={sidebarOpen} />
+            <NavBar
+              toggleSidebar={toggleSidebar}
+              sidebarOpen={sidebarOpen}
+              setSelectedForm={setSelectedForm}
+            />
 
             <Box
               component="nav"
@@ -106,6 +124,7 @@ function App() {
               >
                 <Routes>
                   <Route path="/" element={<HomePage />} />
+                  <Route path="/RestaurantOnline" element={<HomePage />} />                  
                   <Route path="/register" element={<Register />} />
                   <Route path="/login" element={<Login />} />
                   <Route path="/menu" element={<Menu />} />

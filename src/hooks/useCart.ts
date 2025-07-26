@@ -1,5 +1,6 @@
+// src/hooks/useCart.ts
 import { useContext } from 'react';
-import { CartContext } from '../contexts/CartContext';
+import CartContext from '../contexts/CartContext'; // تغییر این خط
 
 export const useCart = () => {
   const context = useContext(CartContext);
@@ -7,4 +8,4 @@ export const useCart = () => {
     throw new Error('useCart must be used within a CartProvider');
   }
   return context;
-}; 
+};
