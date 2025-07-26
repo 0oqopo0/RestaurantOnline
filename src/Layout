@@ -1,0 +1,52 @@
+import { useState, useEffect } from 'react';
+import { Box, useMediaQuery } from '@mui/material';
+import Sidebar from './components/Sidebar';
+import NavBar from './components/NavBar';
+
+const Layout = ({ children }) => {
+  const [selectedForm, setSelectedForm] = useState('home');
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const isMobile = useMediaQuery('(max-width:600px)');
+
+  // Close sidebar when switching to mobile if it was open
+  useEffect(() => {
+    if (isMobile && sidebarOpen) {
+      setSidebarOpen(false);
+    }
+  }, [isMobile]);
+
+  const toggleDrawer = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+
+  return (
+    <Box sx={{ display: 'flex' }}>
+      <NavBar 
+        setSelectedForm={setSelectedForm} 
+        toggleSidebar={toggleDrawer} 
+        sidebarOpen={sidebarOpen} 
+      />
+      <Sidebar
+        setSelectedForm={setSelectedForm}
+        anchor="left"
+        open={sidebarOpen}
+        toggleDrawer={toggleDrawer}
+        isMobile={isMobile}
+      />
+      <Box
+        component="main"
+        sx={{
+          flexGrow: 1,
+          p: 3,
+          width: '100%',
+          marginTop: '64px', // Adjust based on your navbar height
+          marginLeft: isMobile ? 0 : sidebarOpen ? '240px' : '65px',
+          transition: 'margin 0.3s ease',
+        }}
+      >
+        {children}
+      </Box>
+    </Box>
+  );
+};
+export default Layout;

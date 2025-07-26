@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'AovelSansRounded';
+  src: url('./assets/fonts/AovelSansRounded.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('./assets/fonts/Vazirmatn.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'B Nazanin';
+  src: url('./assets/fonts/B Nazanin.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  font-family: 'Vazirmatn', 'B Nazanin', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #000000; /* مشکی برای لایت مد */
+}
+
+html[lang='en'] body {
+  font-family: 'AovelSansRounded', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}             
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #000000; /* مشکی برای لایت مد */
+}
+
+/* تنظیمات برای دارک مد */
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #ffffff; /* سفید برای دارک مد */
+    background-color: #121212; /* پس‌زمینه تیره */
+  }
+  code {
+    color: #141414; /* سفید برای کدها در دارک مد */
+  }
+  .MuiTypography-root,
+  .MuiListItemText-primary,
+  .MuiInputLabel-root,
+  .MuiFormHelperText-root {
+    color: #000000 !important; /* سفید برای متون در دارک مد */
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+  }
+}
+
+/* تنظیمات برای لایت مد */
+@media (prefers-color-scheme: light) {
+  body {
+    color: #000000; /* مشکی برای لایت مد */
+    background-color: #ffffff; /* پس‌زمینه سفید */
+  }
+  code {
+    color: #000000; /* مشکی برای کدها در لایت مد */
+  }
+  .MuiTypography-root,
+  .MuiListItemText-primary,
+  .MuiInputLabel-root,
+  .MuiFormHelperText-root {
+    color: #000000 !important; /* مشکی برای متون در لایت مد */
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+  }
+}
+
+/* تنظیم فونت برای موبایل */
+@media (max-width: 600px) {
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-size: 1.4rem;
+  }
+  code {
+    font-size: 1.2rem;
+  }
+  .MuiTypography-root,
+  .MuiListItemText-primary,
+  .MuiInputLabel-root,
+  .MuiFormHelperText-root {
+    font-size: 1.4rem !important;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
